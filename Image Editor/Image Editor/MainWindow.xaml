@@ -30,11 +30,18 @@
                 <MenuItem Header="Exit" HorizontalAlignment="Left" Width="139.2" Click="Exit_Click"/>
             </MenuItem>
             <MenuItem Header="Image">
-                <MenuItem Header="Undo" HorizontalAlignment="Left" Width="139.2"/>
+                <MenuItem Header="Undo" HorizontalAlignment="Left" Width="139.2" Click="Undo_Click"/>
             </MenuItem>
             <MenuItem Header="Adjust"/>
-            <MenuItem Header="Filter"/>
+            <MenuItem Header="Filter">
+                <MenuItem Header="Box Blur" HorizontalAlignment="Left" Width="139.2" Click="BoxBlur_Click"/>
+                <MenuItem Header="Gaussian Blur" HorizontalAlignment="Left" Width="159.2" Click="GaussianBlur_Click"/>
+                <MenuItem Header="Light Sharp" HorizontalAlignment="Left" Width="159.2" Click="LightSharp_Click"/>
+                <MenuItem Header="Sharp" HorizontalAlignment="Left" Width="159.2" Click="Sharp_Click"/>
+                <MenuItem Header="Unsharp" HorizontalAlignment="Left" Width="159.2" Click="Unsharp_Click"/>
+                <MenuItem Header="Edge Detection" HorizontalAlignment="Left" Width="166.2" Click="EdgeDetection_Click"/>
+            </MenuItem>
         </Menu>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="283" Margin="10,28,0,0" VerticalAlignment="Top" Width="498"/>
+        <Image x:Name="image" HorizontalAlignment="Center" Height="693" Margin="0,28,0.4,-0.2" VerticalAlignment="Top" Width="1118" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
