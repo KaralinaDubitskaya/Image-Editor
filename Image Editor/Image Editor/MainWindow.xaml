@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Image_Editor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Image Editor" Height="750" Width="1125">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="839*"/>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="224*"/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="1118" Grid.ColumnSpan="3">
+            <MenuItem Header="File">
+                <MenuItem Header="Open..." HorizontalAlignment="Left" Width="139.2" Click="Open_Click"/>
+                <MenuItem Header="Close" HorizontalAlignment="Left" Width="139.2" Click="Close_Click"/>
+                <MenuItem Header="Save as..." HorizontalAlignment="Left" Width="139.2" Click="SaveAs_Click"/>
+                <Separator HorizontalAlignment="Left" Height="1" Width="139" RenderTransformOrigin="0.5,0.5">
+                    <Separator.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Separator.RenderTransform>
+                </Separator>
+                <MenuItem Header="Exit" HorizontalAlignment="Left" Width="139.2" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Image">
+                <MenuItem Header="Undo" HorizontalAlignment="Left" Width="139.2"/>
+            </MenuItem>
+            <MenuItem Header="Adjust"/>
+            <MenuItem Header="Filter"/>
+        </Menu>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="283" Margin="10,28,0,0" VerticalAlignment="Top" Width="498"/>
     </Grid>
 </Window>
