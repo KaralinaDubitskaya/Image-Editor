@@ -10,16 +10,23 @@ namespace Image_Editor
 {
     class FileProcessing
     {
+        #region Events
+        #region class OpenEventArgs
         public class OpenEventArgs
         {
+            #region Constructor
             public OpenEventArgs(Bitmap bitmap)
             {
                 Input = bitmap;
             }
+            #endregion
 
-            public Bitmap Input { get;  }
+            #region Properties
+            public Bitmap Input { get; }
+            #endregion
         }
-
+        #endregion
+        #region FileOpened
         public delegate void OpenFileEventHandler(object sender, OpenEventArgs e);
 
         public event OpenFileEventHandler FileOpened;
@@ -28,7 +35,15 @@ namespace Image_Editor
         {
             FileOpened?.Invoke(this, new OpenEventArgs(input));
         }
+        #endregion
+        #endregion
 
+        #region Properties
+        public string FileName { get; set; }
+        #endregion      
+
+        #region Methods
+        #region OpenFile
         public void OpenFile()
         {
             Bitmap input = null;
@@ -45,6 +60,7 @@ namespace Image_Editor
                 try
                 {
                     input = new Bitmap(Image.FromFile(openFileDialog.FileName));
+                    FileName = String.Copy(openFileDialog.FileName);
                 }
 
                 catch (Exception exception)
@@ -55,7 +71,8 @@ namespace Image_Editor
 
             OnFileOpened(input);
         }
-
+        #endregion
+        #region SaveFileAs
         public void SaveFileAs(Bitmap image)
         {
 
@@ -71,6 +88,7 @@ namespace Image_Editor
                 try
                 {
                     image.Save(saveFileDialog.FileName);
+                    FileName = String.Copy(saveFileDialog.FileName);
                 }
 
                 catch (Exception exception)
@@ -79,5 +97,28 @@ namespace Image_Editor
                 }
             }
         }
+        #endregion
+        #region SaveFile
+        public void SaveFile(Bitmap image)
+        {
+            if (this.FileName != null)
+            {
+                try
+                {
+                    image.Save(this.FileName);
+                }
+
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Error: Could not save file. Original error: " + exception.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error: Choose file.");
+            }
+        }
+        #endregion
+        #endregion
     }
 }

@@ -16,6 +16,7 @@
             <MenuItem Header="File">
                 <MenuItem Header="Open..." HorizontalAlignment="Left" Width="139.2" Click="Open_Click"/>
                 <MenuItem Header="Close" HorizontalAlignment="Left" Width="139.2" Click="Close_Click"/>
+                <MenuItem Header="Save" HorizontalAlignment="Left" Width="139.2" Click="Save_Click"/>
                 <MenuItem Header="Save as..." HorizontalAlignment="Left" Width="139.2" Click="SaveAs_Click"/>
                 <Separator HorizontalAlignment="Left" Height="1" Width="139" RenderTransformOrigin="0.5,0.5">
                     <Separator.RenderTransform>
