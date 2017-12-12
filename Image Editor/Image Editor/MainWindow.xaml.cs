@@ -292,5 +292,29 @@ namespace Image_Editor
             explosureWindow = new Explosure(currentImage, this);
             explosureWindow.ShowDialog();
         }
+
+        private void Invert_Click(object sender, EventArgs e)
+        {
+            BackUpCurrentImage();
+            Adjustments adjustment = new Adjustments();
+            adjustment.Invert(currentImage, 0);
+            ViewCurrentImage();
+        }
+
+        private void Sepia_Click(object sender, EventArgs e)
+        {
+            BackUpCurrentImage();
+            Adjustments adjustment = new Adjustments();
+            adjustment.Sepia(currentImage, 0);
+            ViewCurrentImage();
+        }
+
+        private void BlackAndWhite_Click(object sender, EventArgs e)
+        {
+            BackUpCurrentImage();
+            Adjustments adjustment = new Adjustments();
+            adjustment.BlackAndWhite(currentImage, 0);
+            ViewCurrentImage();
+        }
     }
 }
