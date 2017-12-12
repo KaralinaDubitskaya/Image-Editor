@@ -316,5 +316,26 @@ namespace Image_Editor
             adjustment.BlackAndWhite(currentImage, 0);
             ViewCurrentImage();
         }
+
+        private void Rotate90Left_Click(object sender, RoutedEventArgs e)
+        {
+            BackUpCurrentImage();
+            currentImage.RotateFlip(RotateFlipType.Rotate90FlipX);
+            ViewCurrentImage();
+        }
+
+        private void Rotate90Right_Click(object sender, RoutedEventArgs e)
+        {
+            BackUpCurrentImage();
+            currentImage.RotateFlip(RotateFlipType.Rotate270FlipX);
+            ViewCurrentImage();
+        }
+
+        private void Rotate180_Click(object sender, RoutedEventArgs e)
+        {
+            BackUpCurrentImage();
+            currentImage.RotateFlip(RotateFlipType.Rotate180FlipX);
+            ViewCurrentImage();
+        }
     }
 }

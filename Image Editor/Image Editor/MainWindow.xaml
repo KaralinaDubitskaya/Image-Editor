@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Image_Editor"
         mc:Ignorable="d"
-        Title="Image Editor" Height="750" Width="1125">
+        Title="Image Editor" Height="750" Width="1125" Icon="C:\Users\Ирина\Desktop\1.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="839*"/>
@@ -32,6 +32,19 @@
             </MenuItem>
             <MenuItem Header="Image">
                 <MenuItem Header="Undo" HorizontalAlignment="Left" Width="139.2" Click="Undo_Click"/>
+                <Separator HorizontalAlignment="Left" Height="1" Width="169" RenderTransformOrigin="0.5,0.5">
+                    <Separator.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Separator.RenderTransform>
+                </Separator>
+                <MenuItem Header="Rotate 90° left" HorizontalAlignment="Left" Width="159.2" Click="Rotate90Left_Click"/>
+                <MenuItem Header="Rotate 90° right" HorizontalAlignment="Left" Width="169.2" Click="Rotate90Right_Click"/>
+                <MenuItem Header="Rotate 180°" HorizontalAlignment="Left" Width="159.2" Click="Rotate180_Click"/>
             </MenuItem>
             <MenuItem Header="Adjust">
                 <MenuItem Header="Brightness/Contrast" HorizontalAlignment="Left" Width="197" Margin="0,0,-45.8,0" Click="BrightnessContrast_Click"/>
@@ -52,6 +65,7 @@
                 <MenuItem Header="Sepia" HorizontalAlignment="Left" Width="139.2" Click="Sepia_Click"/>
                 <MenuItem Header="BlackAndWhite" HorizontalAlignment="Left" Width="169.2" Click="BlackAndWhite_Click"/>
             </MenuItem>
+            <MenuItem Header="About"/>
         </Menu>
         <Image x:Name="image" HorizontalAlignment="Center" Height="693" Margin="0,28,0.4,-0.2" VerticalAlignment="Top" Width="1118" Grid.ColumnSpan="3"/>
     </Grid>
