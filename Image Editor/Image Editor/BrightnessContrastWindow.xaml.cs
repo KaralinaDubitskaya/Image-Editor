@@ -47,6 +47,9 @@ namespace Image_Editor
 
         private void sliderBrightness_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            if ((sliderBrightness == null) || (sliderContrast == null))
+                return;
+
             Bitmap preview = new Bitmap(input);
             brightnessContast.AdjustBrightnessAndContrast(preview, (int) sliderBrightness.Value, (int) sliderContrast.Value);
             mainWindow.image.Source = mainWindow.BitmapToImageSource(preview);

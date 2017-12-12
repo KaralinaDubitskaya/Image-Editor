@@ -34,7 +34,8 @@
                 <MenuItem Header="Undo" HorizontalAlignment="Left" Width="139.2" Click="Undo_Click"/>
             </MenuItem>
             <MenuItem Header="Adjust">
-                <MenuItem Header="Brightness/Contrast" HorizontalAlignment="Left" Width="195" Margin="0,0,-45.8,0" Click="BrightnessContrast_Click"/>
+                <MenuItem Header="Brightness/Contrast" HorizontalAlignment="Left" Width="197" Margin="0,0,-45.8,0" Click="BrightnessContrast_Click"/>
+                <MenuItem Header="Color Balance" HorizontalAlignment="Left" Width="160" Click="ColorBalance_Click"/>
             </MenuItem>
             <MenuItem Header="Filter">
                 <MenuItem Header="Box Blur" HorizontalAlignment="Left" Width="139.2" Click="BoxBlur_Click"/>

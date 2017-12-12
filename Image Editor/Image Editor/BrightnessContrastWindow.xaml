@@ -23,7 +23,7 @@
         <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="295,39,0,0" VerticalAlignment="Top" Width="75" Height="20" Background="GhostWhite" Click="btnOk_Click"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="295,93,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.496,0.302" Background="GhostWhite" Click="btnCancel_Click"/>
         <Label x:Name="lblBrightness" Content="{Binding Path=Value, ElementName=sliderBrightness}" HorizontalAlignment="Left" Margin="239,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" Width="33" HorizontalContentAlignment="Right"/>
-        <Label x:Name="lblContrast" Content="0" HorizontalAlignment="Left" Margin="239,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" Width="33" HorizontalContentAlignment="Right"/>
+        <Label x:Name="lblContrast" Content="{Binding Path=Value, ElementName=sliderContrast}" HorizontalAlignment="Left" Margin="239,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" Width="33" HorizontalContentAlignment="Right"/>
 
     </Grid>
 </Window>

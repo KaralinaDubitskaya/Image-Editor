@@ -1,0 +1,44 @@
+﻿<Window x:Class="Image_Editor.ColorBalanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Image_Editor"
+        mc:Ignorable="d"
+        Title="ColorBalanceWindow" Height="225" Width="520" Initialized="ColorBalanceWindow_Load">
+    <Grid>
+        <Slider x:Name="sliderRed" IsSnapToTickEnabled="True" Value="0" HorizontalAlignment="Left" Margin="73,44,0,0" VerticalAlignment="Top" Width="249" TickPlacement="BottomRight" Minimum="-100" Maximum="100" Height="18" ValueChanged="sliderRed_ValueChanged" SmallChange="1"/>
+        <Slider x:Name="sliderGreen" HorizontalAlignment="Left" Margin="73,96,0,0" VerticalAlignment="Top" Width="249" RenderTransformOrigin="0.5,0.5" TickPlacement="BottomRight" Minimum="-100" Maximum="100" Height="19" ValueChanged="sliderGreen_ValueChanged" SmallChange="1">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.096"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Label x:Name="lblTitleCyan" Content="Cyan" HorizontalAlignment="Left" Margin="36,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" HorizontalContentAlignment="Right"/>
+        <Label x:Name="lblTitleMagenda" Content="Magenda" HorizontalAlignment="Left" Margin="12,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" HorizontalContentAlignment="Right"/>
+        <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="403,66,0,0" VerticalAlignment="Top" Width="75" Height="20" Background="GhostWhite" Click="btnOk_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="403,120,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.496,0.302" Background="GhostWhite" Click="btnCancel_Click"/>
+        <Label x:Name="lblGreen" Content="{Binding Value, ElementName=sliderGreen}" HorizontalAlignment="Left" Margin="289,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" Width="33" HorizontalContentAlignment="Right"/>
+        <Slider x:Name="sliderBlue" HorizontalAlignment="Left" Margin="73,147,0,0" VerticalAlignment="Top" Width="249" RenderTransformOrigin="0.5,0.5" TickPlacement="BottomRight" Minimum="-100" Maximum="100" Height="21" ValueChanged="sliderBlue_ValueChanged" SmallChange="1">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.096"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Label x:Name="lblTitleYellow" Content="Yellow" HorizontalAlignment="Left" Margin="30,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" HorizontalContentAlignment="Right"/>
+        <Label x:Name="lblBlue" Content="{Binding Value, ElementName=sliderBlue}" HorizontalAlignment="Left" Margin="289,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" Width="33" HorizontalContentAlignment="Right"/>
+        <Label x:Name="lblTitleRed" Content="Red" HorizontalAlignment="Left" Margin="322,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" HorizontalContentAlignment="Left"/>
+        <Label x:Name="lblTitleGreen" Content="Green" HorizontalAlignment="Left" Margin="322,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" HorizontalContentAlignment="Left"/>
+        <Label x:Name="lblTitleBlue" Content="Blue" HorizontalAlignment="Left" Margin="322,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" HorizontalContentAlignment="Left"/>
+        <Label x:Name="lblRed" Content="{Binding Value, ElementName=sliderRed}" HorizontalAlignment="Left" Margin="289,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,-0.148" Width="33" HorizontalContentAlignment="Right"/>
+
+    </Grid>
+</Window>

@@ -52,6 +52,7 @@ namespace Image_Editor
         FileProcessing fileProcessing; 
         Filter filter;
         BrightnessContrastWindow brightnessContrastWindow;
+        ColorBalanceWindow colorBalanceWindow;
         #endregion
 
         #region Constructor
@@ -66,10 +67,6 @@ namespace Image_Editor
             this.FilterCall += filter.ApplyFilter;
             filter.ProcessCompleted += ViewProcessedImage;
             filter.ProcessCompleted += ApproveProcessing;
-
-       /*     brightnessContrastWindow.ProcessingApproved += ApproveProcessing;
-            brightnessContrastWindow.ProcessingCanceled += CancelProcessing;
-            brightnessContrastWindow.ProcessingCompleted += ViewProcessedImage; */
         }
         #endregion
 
@@ -265,6 +262,14 @@ namespace Image_Editor
             BackUpCurrentImage();
             brightnessContrastWindow = new BrightnessContrastWindow(currentImage, this);
             brightnessContrastWindow.ShowDialog();
+        }
+        #endregion
+        #region ColorBalance
+        private void ColorBalance_Click(object sender, RoutedEventArgs e)
+        {
+            BackUpCurrentImage();
+            colorBalanceWindow = new ColorBalanceWindow(currentImage, this);
+            colorBalanceWindow.ShowDialog();
         }
         #endregion
         #endregion
