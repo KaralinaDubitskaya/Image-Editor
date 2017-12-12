@@ -53,6 +53,7 @@ namespace Image_Editor
         Filter filter;
         BrightnessContrastWindow brightnessContrastWindow;
         ColorBalanceWindow colorBalanceWindow;
+        ThresholdWindow thresholdWindow;
         #endregion
 
         #region Constructor
@@ -272,8 +273,16 @@ namespace Image_Editor
             colorBalanceWindow.ShowDialog();
         }
         #endregion
+
         #endregion
 
         #endregion
+
+        private void Threshold_Click(object sender, RoutedEventArgs e)
+        {
+            BackUpCurrentImage();
+            thresholdWindow = new ThresholdWindow(currentImage, this);
+            thresholdWindow.ShowDialog();
+        }
     }
 }
