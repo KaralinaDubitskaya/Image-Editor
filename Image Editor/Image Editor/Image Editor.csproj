@@ -64,6 +64,9 @@
     <Compile Include="ColorBalanceWindow.xaml.cs">
       <DependentUpon>ColorBalanceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Explosure.xaml.cs">
+      <DependentUpon>Explosure.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RgbComponentOperations.cs" />
     <Compile Include="ThresholdWindow.xaml.cs">
       <DependentUpon>ThresholdWindow.xaml</DependentUpon>
@@ -73,6 +76,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ColorBalanceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Explosure.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

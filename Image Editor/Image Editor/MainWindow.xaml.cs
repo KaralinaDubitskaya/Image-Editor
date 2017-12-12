@@ -54,6 +54,7 @@ namespace Image_Editor
         BrightnessContrastWindow brightnessContrastWindow;
         ColorBalanceWindow colorBalanceWindow;
         ThresholdWindow thresholdWindow;
+        Explosure explosureWindow; 
         #endregion
 
         #region Constructor
@@ -283,6 +284,13 @@ namespace Image_Editor
             BackUpCurrentImage();
             thresholdWindow = new ThresholdWindow(currentImage, this);
             thresholdWindow.ShowDialog();
+        }
+
+        private void Explosure_Click(object sender, RoutedEventArgs e)
+        {
+            BackUpCurrentImage();
+            explosureWindow = new Explosure(currentImage, this);
+            explosureWindow.ShowDialog();
         }
     }
 }
