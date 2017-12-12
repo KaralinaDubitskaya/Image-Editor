@@ -199,12 +199,14 @@ namespace Image_Editor
         #region Close current image
         private void Close_Click(object sender, RoutedEventArgs e)
         {
+            fileProcessing.CloseFile(currentImage);
             image.Source = null;
         }
         #endregion
         #region Exit
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
+            fileProcessing.CloseFile(currentImage);
             Close();
         }
         #endregion
@@ -336,6 +338,12 @@ namespace Image_Editor
             BackUpCurrentImage();
             currentImage.RotateFlip(RotateFlipType.Rotate180FlipX);
             ViewCurrentImage();
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow aboutWindow = new AboutWindow();
+            aboutWindow.ShowDialog();
         }
     }
 }

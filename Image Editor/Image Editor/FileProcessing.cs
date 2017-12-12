@@ -120,5 +120,28 @@ namespace Image_Editor
         }
         #endregion
         #endregion
+
+        public void CloseFile(Bitmap image)
+        {
+            if (FileName.Length != 0)
+            {
+
+                // Initializes the variables to pass to the MessageBox.Show method.
+
+                string message = "Do you want to save the changes before you exit?";
+                string caption = "Saving image";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                
+
+                result = MessageBox.Show(message, caption, buttons);
+
+                if (result == DialogResult.Yes)
+                {
+                    SaveFile(image);
+                }
+
+            }
+        }
     }
 }

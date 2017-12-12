@@ -65,7 +65,7 @@
                 <MenuItem Header="Sepia" HorizontalAlignment="Left" Width="139.2" Click="Sepia_Click"/>
                 <MenuItem Header="BlackAndWhite" HorizontalAlignment="Left" Width="169.2" Click="BlackAndWhite_Click"/>
             </MenuItem>
-            <MenuItem Header="About"/>
+            <MenuItem Header="About" Click="About_Click"/>
         </Menu>
         <Image x:Name="image" HorizontalAlignment="Center" Height="693" Margin="0,28,0.4,-0.2" VerticalAlignment="Top" Width="1118" Grid.ColumnSpan="3"/>
     </Grid>
