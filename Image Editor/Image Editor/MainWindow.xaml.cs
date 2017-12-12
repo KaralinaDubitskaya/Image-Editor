@@ -24,14 +24,14 @@ namespace Image_Editor
     public partial class MainWindow : Window
     {
         #region Events
-        #region AdjustmentCall
+       /* #region AdjustmentCall
         public event ImageProcessingEventHandler AdjustmentCall;
 
         protected virtual void OnAdjustmentCall()
         {
             AdjustmentCall?.Invoke(this, new ImageProcessingEventArgs(currentImage));
         }
-        #endregion
+        #endregion */
         #region FilterCall
         public delegate void FilterEventHandler(object sender, FilterEventArgs e);
 
@@ -46,11 +46,12 @@ namespace Image_Editor
 
         #region Fields
         private Bitmap originalImage;
-        private Bitmap currentImage;
+        public  Bitmap currentImage;
         private Bitmap backupImage;
 
         FileProcessing fileProcessing; 
         Filter filter;
+        BrightnessContrastWindow brightnessContrastWindow;
         #endregion
 
         #region Constructor
@@ -65,6 +66,10 @@ namespace Image_Editor
             this.FilterCall += filter.ApplyFilter;
             filter.ProcessCompleted += ViewProcessedImage;
             filter.ProcessCompleted += ApproveProcessing;
+
+       /*     brightnessContrastWindow.ProcessingApproved += ApproveProcessing;
+            brightnessContrastWindow.ProcessingCanceled += CancelProcessing;
+            brightnessContrastWindow.ProcessingCompleted += ViewProcessedImage; */
         }
         #endregion
 
@@ -81,10 +86,15 @@ namespace Image_Editor
         }
         #endregion
         #region ApproveProcessing. Convert image.Source to Bitmap and set current image.
-        private void ApproveProcessing(object sender, ImageProcessingEventArgs e)
+        public void ApproveProcessing(object sender, ImageProcessingEventArgs e)
         {
-
             currentImage = BitmapImageToBitmap(image.Source as BitmapImage);
+        }
+        #endregion
+        #region CancelProcessing. Set current image as image.Sourse without changes.
+        private void CancelProcessing(object sender, ImageProcessingEventArgs e)
+        {
+            image.Source = BitmapToImageSource(currentImage);
         }
         #endregion
 
@@ -108,7 +118,7 @@ namespace Image_Editor
          * Contrary to a Bitmap, it is not based on GDI+. It is based on the Windows Imaging Component.
          * It is the way to load a BitmapImage from a Bitmap.
          */
-        BitmapImage BitmapToImageSource(Bitmap bitmap)
+        public BitmapImage BitmapToImageSource(Bitmap bitmap)
         {
             using (MemoryStream memory = new MemoryStream())
             {
@@ -125,7 +135,7 @@ namespace Image_Editor
         }
         #endregion
         #region BitmapImageToBitmap. Convert BitmapImage to Bitmap.
-        private Bitmap BitmapImageToBitmap(BitmapImage bitmapImage)
+        public Bitmap BitmapImageToBitmap(BitmapImage bitmapImage)
         {
             using (MemoryStream outStream = new MemoryStream())
             {
@@ -243,6 +253,18 @@ namespace Image_Editor
         {
             BackUpCurrentImage();
             OnFilterCall(Filter.EdgeDetection());
+        }
+        #endregion
+
+        #endregion
+
+        #region Adjustment
+        #region BrightnessContrast
+        private void BrightnessContrast_Click(object sender, RoutedEventArgs e)
+        {
+            BackUpCurrentImage();
+            brightnessContrastWindow = new BrightnessContrastWindow(currentImage, this);
+            brightnessContrastWindow.ShowDialog();
         }
         #endregion
         #endregion

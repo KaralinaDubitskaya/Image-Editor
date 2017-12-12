@@ -12,7 +12,7 @@
             <ColumnDefinition Width="56*"/>
             <ColumnDefinition Width="224*"/>
         </Grid.ColumnDefinitions>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="1118" Grid.ColumnSpan="3">
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="1118" Grid.ColumnSpan="3" Background="GhostWhite">
             <MenuItem Header="File">
                 <MenuItem Header="Open..." HorizontalAlignment="Left" Width="139.2" Click="Open_Click"/>
                 <MenuItem Header="Close" HorizontalAlignment="Left" Width="139.2" Click="Close_Click"/>
@@ -33,7 +33,9 @@
             <MenuItem Header="Image">
                 <MenuItem Header="Undo" HorizontalAlignment="Left" Width="139.2" Click="Undo_Click"/>
             </MenuItem>
-            <MenuItem Header="Adjust"/>
+            <MenuItem Header="Adjust">
+                <MenuItem Header="Brightness/Contrast" HorizontalAlignment="Left" Width="195" Margin="0,0,-45.8,0" Click="BrightnessContrast_Click"/>
+            </MenuItem>
             <MenuItem Header="Filter">
                 <MenuItem Header="Box Blur" HorizontalAlignment="Left" Width="139.2" Click="BoxBlur_Click"/>
                 <MenuItem Header="Gaussian Blur" HorizontalAlignment="Left" Width="159.2" Click="GaussianBlur_Click"/>

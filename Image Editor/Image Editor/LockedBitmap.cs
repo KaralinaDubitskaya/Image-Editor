@@ -8,14 +8,21 @@ using System.Drawing;
 
 namespace Image_Editor
 {
-
-    enum Bits: byte
+    #region enum Bits
+    enum Bits : byte
     {
         bitsInByte = 8
     }
+    #endregion
 
+    #region class LockedBitmap
+    /* Class is used to lock (and unlock) an existing bitmap in system memory 
+     * so that it can be changed programmatically. LockBits method offers better
+     * performance for large-scale changes than SetPixel method. 
+     */
     class LockedBitmap
     {
+        #region Properties
         public BitmapData Data { get; }
 
         public int BytesPerPixel { get; }
@@ -24,10 +31,16 @@ namespace Image_Editor
 
         public int WidthInBytes { get; }
 
+        /* The stride is the width of a single row of pixels (a scan line),
+         * rounded up to a four-byte boundary. If the stride is positive,
+         * the bitmap is top-down. If the stride is negative, the bitmap is bottom-up.
+         */
         public int Stride { get; }
 
         public unsafe byte* FirstByte { get; }
+        #endregion
 
+        #region Methods
         public unsafe LockedBitmap(Bitmap source, Rectangle lockedArea)
         {
             Data = source.LockBits(lockedArea, ImageLockMode.ReadWrite, source.PixelFormat);
@@ -55,5 +68,7 @@ namespace Image_Editor
         {
             source.UnlockBits(Data);
         }
+        #endregion
     }
+    #endregion
 }
