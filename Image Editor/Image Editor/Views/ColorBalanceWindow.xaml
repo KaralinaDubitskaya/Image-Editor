@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Image_Editor"
         mc:Ignorable="d"
-        Title="Color Balance" Height="225" Width="520" Initialized="ColorBalanceWindow_Load" Icon="C:\Users\Ирина\Desktop\1.ico">
+        Title="Color Balance" Height="225" Width="520" Initialized="ColorBalanceWindow_Load" Icon="/Resources/1.ico">
     <Grid>
         <Slider x:Name="sliderRed" IsSnapToTickEnabled="True" Value="0" HorizontalAlignment="Left" Margin="73,44,0,0" VerticalAlignment="Top" Width="249" TickPlacement="BottomRight" Minimum="-100" Maximum="100" Height="18" ValueChanged="sliderRed_ValueChanged" SmallChange="1"/>
         <Slider x:Name="sliderGreen" HorizontalAlignment="Left" Margin="73,96,0,0" VerticalAlignment="Top" Width="249" RenderTransformOrigin="0.5,0.5" TickPlacement="BottomRight" Minimum="-100" Maximum="100" Height="19" ValueChanged="sliderGreen_ValueChanged" SmallChange="1">

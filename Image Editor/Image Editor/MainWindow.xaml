@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Image_Editor"
         mc:Ignorable="d"
-        Title="Image Editor" Height="750" Width="1125" Icon="C:\Users\Ирина\Desktop\1.ico">
+        Title="Image Editor" Height="750" Width="1125" Icon="/Resources/1.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="839*"/>

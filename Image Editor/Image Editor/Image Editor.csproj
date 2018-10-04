@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,35 +61,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AboutWindow.xaml.cs">
+    <Compile Include="Views\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrightnessContrastWindow.xaml.cs">
+    <Compile Include="Views\BrightnessContrastWindow.xaml.cs">
       <DependentUpon>BrightnessContrastWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ColorBalanceWindow.xaml.cs">
+    <Compile Include="Views\ColorBalanceWindow.xaml.cs">
       <DependentUpon>ColorBalanceWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Explosure.xaml.cs">
-      <DependentUpon>Explosure.xaml</DependentUpon>
+    <Compile Include="Views\ExplosureWindow.xaml.cs">
+      <DependentUpon>ExplosureWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RgbComponentOperations.cs" />
-    <Compile Include="ThresholdWindow.xaml.cs">
+    <Compile Include="Logic\RgbComponentOperations.cs" />
+    <Compile Include="Views\ThresholdWindow.xaml.cs">
       <DependentUpon>ThresholdWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="AboutWindow.xaml">
+    <Page Include="Views\AboutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrightnessContrastWindow.xaml">
+    <Page Include="Views\BrightnessContrastWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ColorBalanceWindow.xaml">
+    <Page Include="Views\ColorBalanceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Explosure.xaml">
+    <Page Include="Views\ExplosureWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,24 +97,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Adjustment.cs" />
+    <Compile Include="Logic\Adjustment.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CustomFilter.cs" />
-    <Compile Include="FileProcessing.cs" />
-    <Compile Include="Filter.cs" />
-    <Compile Include="ImageFilter.cs" />
-    <Compile Include="ImageProcessingEventArgs.cs" />
-    <Compile Include="IntermediateImage.cs" />
-    <Compile Include="KernelFilter.cs" />
-    <Compile Include="LockedBitmap.cs" />
+    <Compile Include="Logic\CustomFilter.cs" />
+    <Compile Include="Logic\FileProcessing.cs" />
+    <Compile Include="Logic\Filter.cs" />
+    <Compile Include="Logic\ImageFilter.cs" />
+    <Compile Include="Logic\ImageProcessingEventArgs.cs" />
+    <Compile Include="Logic\IntermediateImage.cs" />
+    <Compile Include="Logic\KernelFilter.cs" />
+    <Compile Include="Logic\LockedBitmap.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ThresholdWindow.xaml">
+    <Page Include="Views\ThresholdWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,11 +150,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image-x-photo-cd.ico" />
+    <Resource Include="Resources\1.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="1.ico" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

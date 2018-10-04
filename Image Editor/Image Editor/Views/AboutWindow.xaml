@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Image_Editor"
         mc:Ignorable="d"
-        Title="Image Editor" Height="320" Width="320" Icon="C:\Users\Ирина\Desktop\1.ico">
+        Title="Image Editor" Height="320" Width="320" Icon="/Resources/1.ico">
     <Grid>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="73" Margin="10,10,0,0" VerticalAlignment="Top" Width="73" Source="C:\Users\Ирина\Desktop\1.ico"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="73" Margin="10,10,0,0" VerticalAlignment="Top" Width="73" Source="/Resources/1.ico"/>
         <TextBlock x:Name="tbAbout" HorizontalAlignment="Left" Margin="108,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="176" Text="Applications for image processing"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,99,0,0" TextWrapping="Wrap" Text="Very convenient, fast and practical interface. Here you can find everything you need for the primary correction of photos, including brightness, saturation and contrast of images. And also a lot of filters." VerticalAlignment="Top" Height="86" Width="274"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" Width="259"><Run Text="Dubitskaya Karolina"/><LineBreak/><Run Text="Karolina.D100899@gmail.com"/><LineBreak/><Run/><LineBreak/><Run Text="BSUIR, 2017"/></TextBlock>
